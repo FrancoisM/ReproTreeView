@@ -60,8 +60,8 @@ namespace ReproTreeView
                     new Item("Berries", new List<Item>
                     {
                         new Item("Strawberry", null),
-                        new Item("Blueberry", null),
-                        new Item("Blackberry",null)
+                        new Item("Blueberry", null, true),
+                        new Item("Blackberry",null, true)
                     })
                 })
             };
@@ -71,10 +71,14 @@ namespace ReproTreeView
     {
         public string Name { get; }
         public List<Item> Children { get; }
-        public Item(string name, List<Item> children)
+
+        public bool IsSelected { get; }
+
+        public Item(string name, List<Item> children, bool isSelected = false)
         {
             Name = name;
             Children = children;
+            IsSelected = isSelected;
         }
     }
 }

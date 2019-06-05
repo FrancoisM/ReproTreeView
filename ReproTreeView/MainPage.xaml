@@ -5,16 +5,17 @@
     xmlns:local="using:ReproTreeView"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:XamlControlsResources="using:Microsoft.UI.Xaml.Controls"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TreeView ItemsSource="{Binding Items}" SelectionMode="Multiple">
-            <TreeView.ItemTemplate>
+        <XamlControlsResources:TreeView ItemsSource="{Binding Items}" SelectionMode="Multiple">
+            <XamlControlsResources:TreeView.ItemTemplate>
                 <DataTemplate x:DataType="local:Item">
-                    <TreeViewItem ItemsSource="{Binding Children}" Content="{Binding Name}"/>
+                    <XamlControlsResources:TreeViewItem ItemsSource="{Binding Children}" Content="{Binding Name}" IsSelected="{Binding IsSelected}"/>
                 </DataTemplate>
-            </TreeView.ItemTemplate>
-        </TreeView>
+            </XamlControlsResources:TreeView.ItemTemplate>
+        </XamlControlsResources:TreeView>
     </Grid>
 </Page>
