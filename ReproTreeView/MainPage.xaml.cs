@@ -67,12 +67,17 @@ namespace ReproTreeView
             };
     }
 
-    public class Item
+    public class Item : ReactiveObject
     {
+        private bool _isSelected;
         public string Name { get; }
         public List<Item> Children { get; }
 
-        public bool IsSelected { get; }
+        public bool IsSelected
+        {
+            get => _isSelected;
+            set => this.RaiseAndSetIfChanged(ref _isSelected, value);
+        }
 
         public Item(string name, List<Item> children, bool isSelected = false)
         {
