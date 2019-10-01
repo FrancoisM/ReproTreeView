@@ -9,7 +9,7 @@ namespace ReproTreeView
     {
         public MainPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
             DataContext = new MainPageViewModel();
         }
     }
